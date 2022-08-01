@@ -6,7 +6,7 @@ Figma Link to the design for this page:
 https://www.figma.com/file/M72dHcHNJItdlvUDyYeva7/METADATA-D?node-id=0%3A1
 
 
-In fulfilment of the presentation, the below consist of the links to all requirements, let`s cross examine before we move to submission.
+In fulfilment of the presentation, the below consist of the links to all requirements.
 
 1. Team Name: Fetch_Metadata_Team82.
 

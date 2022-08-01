@@ -9,7 +9,7 @@ const User = require('../models/User');
 
 
 //REGISTER USER
-router.post('/register', async (req, res) => {
+router.post('/register', async (req, res, next) => {
     if (!req.body.username || !req.body.password || !req.body.email) {
         res.status(400).json("Please fill the required inputs!")
     } else {
@@ -21,8 +21,8 @@ router.post('/register', async (req, res) => {
         try {
             const savedUser = await newUser.save();
             res.status(201).json(savedUser);
-        } catch (error) {
-            res.status(500).json(error)
+        } catch (err) {
+           return next(err);
         }
     }
 })
@@ -54,11 +54,11 @@ router.get('/login', async (req, res) => {
             }, process.env.JWTKEY,
                 { expiresIn: '7d' });
 
-            const { password, ...others } = user._doc;
+            const { password, ...userDetails } = user._doc;
 
-            res.status(200).json({ others, accessToken });
-        } catch (error) {
-            res.status(500).json(error);
+            res.status(200).json({ userDetails, accessToken });
+        } catch (err) {
+            return next(err);
         }
     }
 })

@@ -83,7 +83,7 @@ router.post('/:userId', verifyTokenAndAuthorization, async (req, res, next) => {
 });
 
 
-
+//get a single file
 router.get('/:userId/:fileName', verifyTokenAndAuthorization, async (req, res, next) => {
     try {
         const file = await File.findOne({
@@ -91,6 +91,19 @@ router.get('/:userId/:fileName', verifyTokenAndAuthorization, async (req, res, n
             fileName: req.params.fileName
         })
         res.status(200).json(file._doc);
+    } catch (err) {
+        return next(err);
+    }
+})
+
+//get all files
+router.get('/:userId', verifyTokenAndAuthorization, async (req, res, next) => {
+    try {
+        
+        const files = await File.find({
+            userId: req.params.userId
+        })
+        res.status(200).json(files);
     } catch (err) {
         return next(err);
     }

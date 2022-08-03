@@ -2,6 +2,9 @@ const router = require('express').Router();
 const { verifyTokenAndAuthorization } = require('./verifyToken')
 const File = require('../models/File');
 const metadataExtract = require("metadata-extract");
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const multer = require('multer');
 const path = require('path');
@@ -10,7 +13,8 @@ const path = require('path');
 const fs = require('fs');
 const piexif = require('piexifjs');
 
-
+//For uploading files to cloudinary
+const cloudinary = require('./cloudinary');
 
 //upload file
 //using multer to upload files
@@ -50,7 +54,7 @@ router.post('/:userId', verifyTokenAndAuthorization, async (req, res, next) => {
                             const tempfileName = req.file.originalname;
                             const tempfileURL = req.file.path;
                             const tempmetadata = JSON.stringify(finalMetadata);
-                            tempsavedFile = setSavedFile(tempfileName, tempfileURL, tempmetadata);
+                            tempsavedFile = await setSavedFile(tempfileName, tempfileURL, tempmetadata);
 
                             tempsavedFile.userId = req.params.userId;
                             const newFile = new File(tempsavedFile);
@@ -60,7 +64,7 @@ router.post('/:userId', verifyTokenAndAuthorization, async (req, res, next) => {
                             const tempfileName = req.file.originalname;
                             const tempfileURL = req.file.path;
                             const tempmetadata = JSON.stringify(metadatasmall);
-                            const tempsavedFile = setSavedFile(tempfileName, tempfileURL, tempmetadata);
+                            const tempsavedFile = await setSavedFile(tempfileName, tempfileURL, tempmetadata);
 
                             tempsavedFile.userId = req.params.userId;
                             const newFile = new File(tempsavedFile);
@@ -80,16 +84,13 @@ router.post('/:userId', verifyTokenAndAuthorization, async (req, res, next) => {
 
 
 
-router.get('/file/:userId/:fileName', verifyTokenAndAuthorization, async (req, res, next) => {
+router.get('/:userId/:fileName', verifyTokenAndAuthorization, async (req, res, next) => {
     try {
         const file = await File.findOne({
             userId: req.params.userId,
             fileName: req.params.fileName
         })
-        console.log(file._doc);
         res.status(200).json(file._doc);
-
-
     } catch (err) {
         return next(err);
     }
@@ -110,10 +111,19 @@ function debugExif(exif) {
     return finalData;
 }
 
-function setSavedFile(tempfileName, tempfileURL, tempmetadata) {
+async function setSavedFile(tempfileName, tempfileURL, tempmetadata) {
+
     let tempsavedFile = {}
+    let cloudfileUrl = ""
+
+    // Saving file to cloudinary
+    const uploader = async (path) => await cloudinary.uploads(path, "MetadataFiles")
+
+    await uploader(tempfileURL).then((result) => {
+        cloudfileUrl = result.url
+    })
     tempsavedFile.fileName = tempfileName;
-    tempsavedFile.fileURL = tempfileURL;
+    tempsavedFile.fileURL = cloudfileUrl;
     tempsavedFile.metadata = tempmetadata;
     return tempsavedFile
 }

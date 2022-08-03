@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/users" method="POST">
+        <label>Username
+            <input type="text" name="username" value="<%= locals.username %>" required>
+        </label>
+        <label>rating
+            <input type="text" name="review_title" value="<%= locals.review_title %>" required>
+        </label>
+        <label>Text
+            <input type="text" name="review_test" value="<%= locals.review_test %>" required>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="reviews">
+    <h1>All Reviews</h1>
+
+    <% if (reviews.length > 0) { %>
+        <% reviews.forEach(review => { %>
+            <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s; padding: 10px; max-width: 30%">
+                <div class="star-widget">
+                    <span class="fa fa-star" style="color: orange;"></span>
+                    <span class="fa fa-star" style="color: orange;"></span>
+                    <span class="fa fa-star" style="color: orange;"></span>
+                    <span class="fa fa-star" style="color: orange;"></span>
+                    <span class="fa fa-star" style="color: orange;"></span>
+                </div>
+                <h3 class="username"><%= review.name%> </h3>
+                <strong>   
+                    <p class="review_title"><%= review.title %> </p>
+                </strong>
+                <p class="review_test">  
+                    <%= review.review_string %> 
+                </p>
+                <p class="timeCreated">
+                    <%= review.createdAt %> 
+                </p>
+                </div>
+              </div>
+            <br>
+        <% }) %>
+    <% } else { %>
+        <p>No reviews to display</p>
+    <% } %>    
+   </div>
+</body>
+</html>

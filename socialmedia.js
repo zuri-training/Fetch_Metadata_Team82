@@ -1,5 +1,5 @@
 const pageUrl = location.href
-const message = 'Here is the metadata for'
+const message = 'Here is the metadata for ${}'
 
 const whatsAppApi = `https://wa.me/?text=${pageUrl}. ${message}`
 const telegramApi = `https://t.me/share/url?url=${pageUrl}&text=${message}`

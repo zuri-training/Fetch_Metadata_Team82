@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: aqua;
+}
+
+.button {
+    margin: 1rem;
+    font-size: 30px;
+}
+
+.button:hover {
+    transform: scale(1.35);
+}

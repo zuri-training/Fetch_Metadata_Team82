@@ -32,11 +32,11 @@ router.post('/register', async (req, res, next) => {
 
 //LOGIN
 router.get('/login', async (req, res) => {
-    if (!req.body.username || !req.body.password) {
+    if (!req.body.email || !req.body.password) {
         res.status(400).json("Please fill the required inputs!")
     } else {
         try {
-            const user = await User.findOne({ username: req.body.username });
+            const user = await User.findOne({ email: req.body.email });
 
             // !user && res.status(401).json("Wrong Credientials!");
             if (!user) {

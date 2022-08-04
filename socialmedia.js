@@ -1,7 +1,3 @@
-app.get('/', (req, res) => {
-    res.download("./fetch-meta-data.herokuapp.com/upload")
-})
-
 const pageUrl = location.href
 const message = 'Here is the metadata for'
 
@@ -24,3 +20,7 @@ telegram.addEventListener('click', () => {
 twitter.addEventListener('click', () => {
     window.open(url = twitterApi, target='blank')
 })
+
+/* app.get('/', (req, res) => {
+    res.download("./fetch-meta-data.herokuapp.com/upload")
+}) */

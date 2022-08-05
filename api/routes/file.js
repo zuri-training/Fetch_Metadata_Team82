@@ -99,7 +99,6 @@ router.get('/:userId/:fileName', verifyTokenAndAuthorization, async (req, res, n
 //get all files
 router.get('/:userId', verifyTokenAndAuthorization, async (req, res, next) => {
     try {
-        
         const files = await File.find({
             userId: req.params.userId
         })

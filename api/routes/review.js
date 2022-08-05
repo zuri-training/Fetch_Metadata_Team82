@@ -17,25 +17,19 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
     try {
-        const isValid = true
-        if (isValid) {
-            const review = new Review({
-                username: req.body.username,
-                rating: req.body.rating,
-                review_string: req.body.review_string
-            });
+        const review = new Review({
+            username: req.body.username,
+            rating: req.body.rating,
+            review_string: req.body.review_string
+        });
 
-            await review.save().then((result) => {
-                res.send(result)
-            }).catch((err) => {
-                next(err);
-            });
-            // res.redirect("/users")
-        } else {
-            console.log("Error")
-            res.render("users/new", { firstName: req.body.firstName, title: req.body.review_title, review_string: req.body.review_test })
-        }
-    } catch(err) {
+        await review.save().then((result) => {
+            res.status(200).json(result)
+        }).catch((err) => {
+            next(err);
+        });
+
+    } catch (err) {
         next(err);
     }
 })

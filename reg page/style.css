@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+body {
+    
+    font-family: 'Lato', sans-serif;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    /* width: 100%; */
+    /* height: 100%; */
+}
+.menu-bar {
+    width: 100vw;
+    height: 4vh;
+    background-color: #0000FF;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+    padding: 12px 0 5px 43px;
+}
+.logo {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    width: 1.9rem;
+    height: 1.1rem;
+    padding: 5px 3px 1px;
+}
+.first-circle {
+    border: 5px solid #0000FF;
+    background-color: #0000FF;
+    border-radius: 50%;
+    height: 0.15rem;
+    width: 0.1rem;
+}
+.second-circle {
+    border: 5px solid #0000FF;
+    background-color: #0000FF;
+    border-radius: 50%;
+    height: 0.15rem;
+    width: 0.1rem;
+}
+.home-doc {
+    visibility: hidden;
+}
+.arrow-div {
+    margin-bottom: 34px;
+}
+
+h5 {
+    font-family: Lato;
+    font-weight: 700;
+    font-size: 24px;
+    font-style: bold;
+    fill: #000000;
+}
+.entire {
+    width: 90%;
+    /* border: 5px solid red; */
+    padding-left: 34px;
+}
+#container {
+    position: relative;
+    text-align: left;
+    margin-top: 30px;
+}
+.f-name label {
+    font-size: 16px;
+    color: #2B2B2B;
+}
+.mail-ad label {
+    font-size: 16px;
+    color: #2B2B2B;
+}
+.password label {
+    font-size: 16px;
+    color: #2B2B2B;
+}
+.confirm-psw label {
+    font-size: 16px;
+    color: #2B2B2B;
+}
+#fName {
+    width: 80vw;
+    margin: 5px 0 20px;
+    color: #484848;
+    padding-left: 10px;
+    height:35px; 
+    font-size: 16px;
+    border-radius:5px; 
+    border-width: 2.7px;
+    border-color:#0000ff5f;
+}
+#email {
+    width: 80vw;
+    margin: 5px 0 20px;
+    color: #484848;
+    font-size: 16px;
+    padding-left: 10px;
+    height:35px; 
+    border-radius:5px; 
+    border-width: 2.7px;
+    border-color:#0000ff5f;
+}
+
+#psw {
+    width:80vw;
+    color: #484848;
+    padding-left: 10px;
+    height:35px; 
+    font-size: 16px;
+    border-radius:5px; 
+    border-width: 2.7px;
+    border-color:#0000ff5f;
+}
+#togglePassword, #togglePassword2 {
+    margin-left: -30px;
+    cursor: pointer;
+    color: #6D6D6D;
+}
+#alert {
+    color: red;
+}
+.password p {
+    font-size: 10px;
+    color: #6D6D6D;
+    width: 80vw;
+    display: inline-block;
+    /* float: left; */
+}
+.password {
+    margin: 5px 0 10px;
+}
+
+#c-psw {
+    width: 80vw;
+    margin: 5px 0 5px;
+    color: #484848;
+    padding-left: 10px;
+    height:35px; 
+    font-size: 16px;
+    border-radius:5px; 
+    border-width: 2.7px;
+    border-color:#0000ff5f;
+}
+.terms {
+    margin: 5px 0 20px;
+    font-size: 16px;
+    width: 80vw;
+}
+.terms a {
+    text-decoration: none;
+    color: #0000FF;
+}
+#check {
+    border-color: #2B2B2B;
+    max-width: calc(75vw - 10px);
+}
+#btn {
+    background-color: #0000FF;
+    color: #FFFFFF;
+    width: 81vw;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0 15px;
+    font-weight: 700;
+    font-size: 20px;
+    height: 35px;
+}
+#btn:hover {
+    background-color: #0000AA;
+    color: #FFFFFF;
+}
+.link p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+}
+.link a {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+@media only screen and (min-width: 700px) {
+    * {
+        margin: 0 auto;
+        padding: 0;
+    }
+    body {
+        font-family: 'Lato', sans-serif;
+        align-items: center;
+        justify-content: center;
+        background-color: #F5F5F9;
+    }
+    .menu-bar {
+        margin-bottom: 60px;
+        background-color: #0000FF;
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        /* flex-wrap: wrap; */
+        height: calc(10.5vh - 30px);
+        text-align: center;
+        text-decoration: none;
+        padding: 20px 0 15px 43px;
+    }
+    .drop-down {
+        float: right;
+        overflow: hidden;
+        padding-left: 40px;
+    }
+    .drop-btn {
+        color: #F5F5F9;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        font-weight: 700;
+        font-family: Lato;
+        text-decoration: none;
+    }
+    /* .drop-btn i {
+        width: 0.4rem;
+        height: 0.01rem;
+    } */
+    .drop-down-content {
+        display: none;
+        position: absolute;
+        min-width: 120px;
+        box-shadow: #F5F5F9;
+        z-index: 1;
+    }
+    .drop-down-content a {
+        font-size: 2px;
+        float: none;
+        color:#6D6D6D;
+        padding: 12px 15px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    .drop-down-content a:hover {
+        background-color: #0000FF;
+    }
+    .drop-down:hover .drop-down-content {
+        display: block;
+    }
+    .logo {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        border: none;
+        background-color: #FFFFFF;
+        border-radius: 19px;
+        width: calc(3rem - 16px);
+        height: calc(2rem - 18px);
+        padding: 7px 8px 4px;
+    }
+    .first-circle {
+        border: 5px solid #0000FF;
+        background-color: #0000FF;
+        border-radius: 50%;
+        height: 0.2rem;
+        width: 0.2rem;
+    }
+    .second-circle {
+        border: 5px solid #0000FF;
+        background-color: #0000FF;
+        border-radius: 50%;
+        height: 0.2rem;
+        width: 0.2rem;
+    }
+    .home-doc {
+        visibility:visible;
+        position: absolute;
+        right: 100px;
+    }
+    .home-doc a {
+        color: #FFFFFF;
+        padding: 0 10px 0 30px;
+        font-size: 15px;
+        font-weight: 700;
+        font: Lato;
+        text-decoration: none;
+    }
+
+    .arrow-div {
+        visibility: hidden;
+        margin-bottom: 10px;
+    }
+    h5 {
+        font-family: Lato;
+        font-weight: 700;
+        font-size: 32px;
+        font-style: bold;
+        fill: #000000;
+        margin-bottom: 15px;
+    }
+    .entire {
+        max-width: 400px;
+        height: 550px;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background-color: #FFFFFF;
+        box-shadow: 10px;
+        padding-left: 40px;
+        margin-bottom: 40px;
+    }
+    
+    #container label {
+        font-size: 20px;
+        color: #2B2B2B;
+        font-weight: 400;
+    }
+    #fName {
+        width: 300px;
+        height: 25px;
+        border-radius: 10px;
+        margin: 5px 0 10px;
+        color: #6D6D6D;
+        padding-left: 20px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    #email {
+        width: 300px;
+        height: 25px;
+        border-radius: 10px;
+        margin: 5px 0 10px;
+        color: #6D6D6D;
+        padding-left: 20px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    #psw {
+        width: 300px;
+        height: 25px;
+        border-radius: 10px;
+        color: #6D6D6D;
+        padding-left: 20px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .password p {
+        font-size: 10px;
+        color: #6D6D6D;
+        width: 380px;
+    }
+    .password {
+        margin: 5px 0 10px;
+    }
+    #c-psw {
+        width: 300px;
+        height: 25px;
+        border-radius: 10px;
+        margin: 5px 0 10px;
+        color: #6D6D6D;
+        padding-left: 20px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    #togglePassword, #togglePassword2 {
+        margin-left: -30px;
+        cursor: pointer;
+        color: #6D6D6D;
+    }
+    .terms {
+        margin: 0px 0 20px;
+        font-size: 16px;
+        width: 345px;
+    }
+    .terms a {
+        text-decoration: none;
+        color: #0000FF;
+    }
+    #btn {
+        background-color: #0000FF;
+        color: #FFFFFF;
+        width: 320px;
+        height: 25px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px 0 5px;
+        font-weight: 700;
+        font-size: 12px;
+    }
+    #btn:hover {
+        background-color: #0000AA;
+        color: #FFFFFF;
+    }
+    .link p {
+        font-size: 20px;
+        font-weight: 400;
+        color: #000000;
+        width: 345px;
+    }
+    .link a {
+        text-decoration: none;
+        color: #0000FF;
+    }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="menu-bar">
+            <div class="logo">
+                <span class="first-circle"></span>
+                <span class="second-circle"></span>
+            </div>
+            <div class="home-doc">
+                <a href="">Home</a> 
+                <a href="">Documentation</a>
+                <div class="drop-down">
+                    <button class="drop-btn">FAQ
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="drop-down-content">
+                        <a href="#">FAQ 1</a>
+                        <a href="#">FAQ 2</a>
+                        <a href="#">FAQ 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="entire">
+        <div class="arrow-log">
+            <div class="arrow-div"> <img src="\images\Vector.png"></div>
+            <h5>Create an account</h5>
+        </div>
+        <form action="/" method="post" enctype="text/plain" id="container">
+            <div class="input-control">
+                <label for="fName">Full name</label> <br>
+                <input type="text" id="fName" placeholder="Bodede Oludolapo" required/>
+            </div>
+            <div class="input-control">
+                <label for="email">Email address</label> <br>
+                <input type="email" id="email" placeholder="Bodededolapo@gmail.com" required/>
+                
+            </div>
+            <div class="password">
+                <label for="psw">Password</label> <br>
+                <input type="password" id="psw" placeholder="Dolapo123@data" onchange='onchange()' required/>
+                <i class="far fa-eye" id="togglePassword"></i>
+                <p>Password should contain an uppercase letter, number and symbol.</p>
+                
+            </div>
+            <div class="input-control">
+                <label for="c-psw">Confirm Password</label> <br>
+                <input type="password" id="c-psw" placeholder="Dolapo123@data" onChange='onchange()' required/>
+                <i class="far fa-eye" id="togglePassword2"></i>
+                <p><span class="alert"></span> </p>
+            </div>
+            <div class="terms">
+                <p><input type="checkbox" id="check"> I agree to <a href="">Terms of Use</a> and <a href="">Privacy Policy</a></p>
+            </div>
+            <div>
+                <input type="submit" value="Create account" id="btn">
+            </div>
+            <div class="link">
+                <p>Already have an account? <a href="/SignIn Page/index.html">Sign in</a></p>
+            </div>
+        </form>
+
+    </div>
+    <script>
+        const togglePassword = document.querySelector("#togglePassword", "#togglePassword2");
+        const password = document.querySelector("#psw, #c-psw");
+
+        togglePassword.addEventListener("click", function () {
+        // toggle the type attribute
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        // toggle the eye slash icon
+        this.classList.toggle("fa-eye-slash");
+        });
+
+        
+
+        var form = document.getElementById('container')
+        
+
+        form.addEventListener('submit',function(e){
+            const vPassword = document.getElementById("psw").value;
+            const vConfirmPassword = document.getElementById("c-psw").value;
+
+            if(vPassword !== vConfirmPassword){
+                alert("Passords do not match")
+                e.preventDefault()
+            }
+        })
+        
+    </script>
+
+
+    
+    <!-- <script type="text/javascript">
+        function validate() {
+            var vPassword = document.getElementById("psw").value;
+            var vConfirmPassword = document.getElementById("c-psw").value;
+              if (vPassword != vConfirmPassword) {
+                document.getElementById("alert").textContent = "Passwords do not match.";
+              }
+              return true 
+          }
+
+    </script> -->
+    <!-- <script>
+        function onchange() {
+            const vPassword = document.querySelector('psw');
+            const confirm = document.querySelector('c-psw');
+            if (c-psw.value === psw.value) {
+                confirm.setCustomValidity('');
+            } else {
+                confirm.setCustomValidity('Passwords do not match');
+            }
+        }
+    </script> -->
+    
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Page</title>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/SignIn Page/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu-bar">
+            <div class="logo">
+                <span class="first-circle"></span>
+                <span class="second-circle"></span>
+            </div>
+            <div class="home-doc">
+                <a href="">Home</a>
+                <a href="">Documentation</a>
+                <div class="drop-down">
+                    <button class="drop-btn">FAQ
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="drop-down-content">
+                        <a href="#">FAQ 1</a>
+                        <a href="#">FAQ 2</a>
+                        <a href="#">FAQ 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="entire">
+        <div class="arrow-log">
+            <div class="arrow-div"> <img src="/images/Vector.png"></div>
+            <h5>Log in</h5>
+        </div>
+
+        <div class="container">
+
+            <form action="" id="logInForm" method="post" enctype="text/plain" name="form">
+                <label for="mail" class="label">Email address</label><br>
+                <input type="email" id="mail" placeholder="Bodededolapo@gmail.com">
+                <br>
+                <!-- <i class="error-icon fas fa-exclamation-circle"></i>
+                <div id="error error-text">Email can`t be blank</div> -->
+                <label for="psw" class="label">Password</label><br>
+                <input type="password" id="psw" placeholder="Dolapo123@data"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required>
+                <i class="far fa-eye" id="togglePassword"></i>
+                <br>
+                <!-- <i class="error-icon fas fa-exclamation-circle"></i>
+                <div id="error error-txt">Password can`t be blank</div> -->
+                <p><a href="" style="text-decoration: none;">Forgot password?</a></p>
+                <input type="submit" value="Log in" id="btn">
+            </form>
+            <div id="message">
+                <h4>Password must contain the following:</h4>
+                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                <p id="number" class="invalid">A <b>number</b></p>
+                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
+        </div>
+        <div class="create">
+            <p>Don`t have an account? <strong><a href="/reg page/index.html"> Create account</a></strong></p>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#psw");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            // toggle the eye slash icon
+            this.classList.toggle("fa-eye-slash");
+        });
+
+        // prevent from submit
+
+        // Login Route
+
+        $("#logInForm").on("submit", (e) => {
+            e.preventDefault();
+
+            var email = $("#mail").val();
+            var password = $("#psw").val()
+
+            $.ajax({
+                url: "http://localhost:3000/auth/login",
+                dataType: "json",
+                type: "post",
+                contentType: "application/json",
+                data: JSON.stringify({ "email": email, "password": password }),
+                processData: false,
+                success: function (data, textStatus, jQxhr) {
+                    // console.log(data);
+                    // console.log(data.accessToken);
+                    data.accessToken && localStorage.setItem('accessToken', data.accessToken)
+                    data.accessToken && localStorage.setItem('userId', data.userDetails._id)
+                    data.accessToken && localStorage.setItem('username', data.userDetails.username)
+                    data.accessToken && localStorage.setItem('email', data.userDetails.email)
+
+                },
+                error: function (jqxhr, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                }
+            })
+        })
+
+    </script>
+    <script src="/SignIn Page/script.js"></script>
+
+</body>
+
+</html>

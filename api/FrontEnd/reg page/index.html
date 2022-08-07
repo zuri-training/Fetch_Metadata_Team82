@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="/reg page/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="menu-bar">
+            <div class="logo">
+                <span class="first-circle"></span>
+                <span class="second-circle"></span>
+            </div>
+            <div class="home-doc">
+                <a href="">Home</a>
+                <a href="">Documentation</a>
+                <div class="drop-down">
+                    <button class="drop-btn">FAQ
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="drop-down-content">
+                        <a href="#">FAQ 1</a>
+                        <a href="#">FAQ 2</a>
+                        <a href="#">FAQ 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="entire">
+        <div class="arrow-log">
+            <div class="arrow-div"> <img src="/images/Vector.png"></div>
+            <h5>Create an account</h5>
+        </div>
+        <form enctype="text/plain" id="container regForm">
+            <div class="input-control">
+                <label for="fName">Full name</label> <br>
+                <input type="text" id="fName" placeholder="Bodede Oludolapo" required />
+            </div>
+            <div class="input-control">
+                <label for="email">Email address</label> <br>
+                <input type="email" id="email" placeholder="Bodededolapo@gmail.com" required />
+
+            </div>
+            <div class="password">
+                <label for="psw">Password</label> <br>
+                <input type="password" id="psw" placeholder="Enter password here" required />
+                <i class="far fa-eye" id="togglePassword"></i>
+                <p>Password should contain an uppercase letter, number and symbol.</p>
+
+            </div>
+            <div class="input-control">
+                <label for="c-psw">Confirm Password</label> <br>
+                <input type="password" id="c-psw" placeholder="Enter password here" required />
+                <i class="far fa-eye" id="togglePassword2"></i>
+                <p><span class="alert" id="password-alert"></span> </p>
+            </div>
+            <div class="terms">
+                <p><input type="checkbox" id="check"> I agree to <a href="">Terms of Use</a> and <a href="">Privacy
+                        Policy</a></p>
+            </div>
+            <div>
+                <input type="submit" value="Create account" id="btn">
+            </div>
+            <div class="link">
+                <p>Already have an account? <a href="/SignIn Page/index.html">Sign in</a></p>
+            </div>
+        </form>
+
+    </div>
+    <script>
+
+
+        function changeAttribute(element, input) {
+            var type = $(input).attr("type")
+            type === "password" ? type = "text" : type = "password";
+            $(input).attr("type", type);
+            // toggle the eye slash icon
+            $(element).toggleClass("fa-eye-slash");
+        }
+
+        $("#togglePassword").on("click", () => {
+            // toggle the type attribute
+            changeAttribute("#togglePassword", "#psw")
+
+        });
+
+        $("#togglePassword2").on("click", () => {
+            // toggle the type attribute
+            changeAttribute("#togglePassword2", "#c-psw")
+
+        });
+
+
+
+        // Making AJAX call
+
+        $("#btn").on("click", (e) => {
+            e.preventDefault();
+
+            const username = $("#fName").val();
+            const email = $("#email").val();
+            const password = $("#psw").val()
+            const repassword = $("#c-psw").val();
+
+            if (password !== repassword) {
+                alert("Passwords Do Not Match!");
+                $("#fName").val("")
+                $("#email").val("")
+                $("#psw").val("")
+                $("#c-psw").val("")
+            } else {
+                $.ajax({
+                    url: "http://localhost:3000/auth/register",
+                    dataType: "json",
+                    type: "post",
+                    contentType: "application/json",
+                    data: JSON.stringify({ "username": username, "email": email, "password": password }),
+                    processData: false,
+                    success: function (data, textStatus, jQxhr) {
+                        alert(data.message)
+                        $("#fName").val("")
+                        $("#email").val("")
+                        $("#psw").val("")
+                        $("#c-psw").val("")
+                        window.location.href = "/SignIn Page/index.html";
+                    },
+                    error: function (jqxhr, textStatus, errorThrown) {
+                        console.log(errorThrown);
+                    }
+                })
+
+
+            }
+        })
+
+    </script>
+
+
+
+    <!-- <script type="text/javascript">
+        function validate() {
+            var vPassword = document.getElementById("psw").value;
+            var vConfirmPassword = document.getElementById("c-psw").value;
+              if (vPassword != vConfirmPassword) {
+                document.getElementById("alert").textContent = "Passwords do not match.";
+              }
+              return true 
+          }
+
+    </script> -->
+    <!-- <script>
+        function onchange() {
+            const vPassword = document.querySelector('psw');
+            const confirm = document.querySelector('c-psw');
+            if (c-psw.value === psw.value) {
+                confirm.setCustomValidity('');
+            } else {
+                confirm.setCustomValidity('Passwords do not match');
+            }
+        }
+    </script> -->
+
+</body>
+
+</html>

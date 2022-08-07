@@ -35,7 +35,7 @@ app.use(express.json());
 app.use(express.static('FrontEnd'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve('./FrontEnd/SignIn page/index.html'))
+    res.sendFile(path.resolve('./FrontEnd/SignIn page/login.html'))
 });
 
 // app.use('/upload', metadataExtractor);

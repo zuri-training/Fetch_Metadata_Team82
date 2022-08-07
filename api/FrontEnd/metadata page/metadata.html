@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Metadata display page</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+			integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="/metadata page/metadata.css" />
+
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"></script>
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		<header>
+			<!-- left nav-bar -->
+			<nav class="nav-bar">
+				<div class="nav-logo">
+					<div class="logo-head">
+						<div class="logo"><a href="#"></a></div>
+						<div class="logo"><a href="#"></a></div>
+					</div>
+				</div>
+				<!-- right nav-bar -->
+				<div class="nav-menu">
+					<ul>
+						<li id="saved-files" class="nav-item"><a href="#">Saved files</a></li>
+						<li id="manage-account" class="nav-item">
+							<a class="manage" href="#">Manage account <i id="m-icon" class="fa-solid fa-angle-down"></i></a>
+							<div class="dropdown_menu" id="drop">
+								<ul>
+									<li>
+										<a href="#">Adedolapo Bodede <i class="fa-solid fa-circle-user"></i></a>
+										<p>adedolapobodede@gmail.com</p>
+									</li>
+									<li>
+										<a href="#" id="change-password">Change password<i class="fa-solid fa-unlock-keyhole"></i></a>
+									</li>
+									<li><a href="#" id="logout">Logout</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- mobile view hamburger -->
+				<div class="hamburger">
+					<img src="/metadata page/icons/hamburger/Vector.svg" class="hamburger-image" alt="menu" />
+				</div>
+			</nav>
+		</header>
+		<!-- main section-->
+		<main>
+			<section class="section1">
+				<div id="display_file">
+					<figure>
+						<img id="chosen-file" />
+						<figcaption id="file-name"></figcaption>
+					</figure>
+				</div>
+			</section>
+
+			<section class="section2">
+				<form enctype="multipart/form-data" id="formD">
+					<input type="file" name="uploaded_file" id="file_input" accept="image/*, .json, .pdf, .csv" />
+					<label for="file_input">Upload new file</label>
+					<input type="submit" value="Generate Metadata" id="uploadBtn" />
+				</form>
+			</section>
+
+			<section class="section3">
+				<div class="container">
+					<div id="display-metadata"></div>
+				</div>
+			</section>
+
+			<section class="section4">
+				<button id="share-btn">Share</button>
+				<button id="download-btn">Download</button>
+			</section>
+		</main>
+
+		<!-- Loading -->
+		<div class="container-x hide" id="loading">
+			<div class="overlay">
+				<div id="animation">
+					<div class="loader"></div>
+					<div class="dots">
+						<div class="first-dot"></div>
+						<div class="second-dot"></div>
+					</div>
+				</div>
+			</div>
+			<p>A bunch of content here.....</p>
+		</div>
+		<script src="/metadata page/metadata.js"></script>
+	</body>
+</html>

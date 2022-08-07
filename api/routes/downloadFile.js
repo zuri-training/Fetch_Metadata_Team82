@@ -5,7 +5,7 @@ const http = require('http');
 const { verifyTokenAndAuthorization } = require('./verifyToken')
 
 //download file
-router.get('/', (req, res, next) => {
+router.post('/', (req, res, next) => {
 
     //actual code to be used
     const downloadUrl = req.body.fileUrl
@@ -16,13 +16,21 @@ router.get('/', (req, res, next) => {
     // const fileName = "git and github.pdf"
     //test assignment ends
 
-    http.get(downloadUrl, function (file) {
+   try{
+       http.get(downloadUrl, function (file) {
 
-        res.set('Content-disposition', 'attachment; filename=' + (fileName));
-        res.set('Content-Type', file.rawHeaders[1])
+          try{
+              res.set('Content-disposition', 'attachment; filename=' + (fileName));
+              res.set('Content-Type', file.rawHeaders[1])
 
-        file.pipe(res);
-    });
+              file.pipe(res);
+          } catch(err) {
+            next(err)
+          }
+       });
+   } catch(err) {
+    next(err)
+   }
 })
 
 module.exports = router;

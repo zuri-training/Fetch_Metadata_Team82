@@ -32,55 +32,53 @@ const upload = multer({ storage: storage }).single("uploaded_file");
 
 router.post('/:userId', verifyTokenAndAuthorization, async (req, res, next) => {
     //This if block has to be updated (only the if block)
-    if (req.body == {}) {
-        return res.status(400).json("Please fill the required inputs!")
-    } else {
-        try {
-            upload(req, res, async (err) => {
-                try {
-                    if (err) {
-                        return next(err);
-                    } else {
-                        const metadatasmall = await metadataExtract(req.file.path);
-                        if (req.file.mimetype === 'image/jpeg') {
-                            const getBase64DataFromJpegFile = filename => fs.readFileSync(filename).toString('binary');
-                            const getExifFromJpegFile = filename => piexif.load(getBase64DataFromJpegFile(filename));
 
-                            const exifData = getExifFromJpegFile(req.file.path);
-
-                            const metadata = debugExif(exifData);
-                            const finalMetadata = { ...metadatasmall, ...metadata }
-
-                            const tempfileName = req.file.originalname;
-                            const tempfileURL = req.file.path;
-                            const tempmetadata = JSON.stringify(finalMetadata);
-                            tempsavedFile = await setSavedFile(tempfileName, tempfileURL, tempmetadata);
-
-                            tempsavedFile.userId = req.params.userId;
-                            const newFile = new File(tempsavedFile);
-                            const savedFile = await newFile.save();
-                            res.status(200).json(savedFile);
-                        } else {
-                            const tempfileName = req.file.originalname;
-                            const tempfileURL = req.file.path;
-                            const tempmetadata = JSON.stringify(metadatasmall);
-                            const tempsavedFile = await setSavedFile(tempfileName, tempfileURL, tempmetadata);
-
-                            tempsavedFile.userId = req.params.userId;
-                            const newFile = new File(tempsavedFile);
-                            const savedFile = await newFile.save();
-                            res.status(200).json(savedFile);
-                        }
-                    }
-                } catch (err) {
+    try {
+        upload(req, res, async (err) => {
+            try {
+                if (err) {
                     return next(err);
+                } else {
+                    const metadatasmall = await metadataExtract(req.file.path);
+                    if (req.file.mimetype === 'image/jpeg') {
+                        const getBase64DataFromJpegFile = filename => fs.readFileSync(filename).toString('binary');
+                        const getExifFromJpegFile = filename => piexif.load(getBase64DataFromJpegFile(filename));
+
+                        const exifData = getExifFromJpegFile(req.file.path);
+
+                        const metadata = debugExif(exifData);
+                        const finalMetadata = { ...metadatasmall, ...metadata }
+
+                        const tempfileName = req.file.originalname;
+                        const tempfileURL = req.file.path;
+                        const tempmetadata = JSON.stringify(finalMetadata);
+                        tempsavedFile = await setSavedFile(tempfileName, tempfileURL, tempmetadata);
+
+                        tempsavedFile.userId = req.params.userId;
+                        const newFile = new File(tempsavedFile);
+                        const savedFile = await newFile.save();
+                        res.status(200).json(savedFile);
+                    } else {
+                        const tempfileName = req.file.originalname;
+                        const tempfileURL = req.file.path;
+                        const tempmetadata = JSON.stringify(metadatasmall);
+                        const tempsavedFile = await setSavedFile(tempfileName, tempfileURL, tempmetadata);
+
+                        tempsavedFile.userId = req.params.userId;
+                        const newFile = new File(tempsavedFile);
+                        const savedFile = await newFile.save();
+                        res.status(200).json(savedFile);
+                    }
                 }
-            });
-        } catch (err) {
-            return next(err);
-        }
+            } catch (err) {
+                return next(err);
+            }
+        });
+    } catch (err) {
+        return next(err);
     }
-});
+}
+);
 
 
 //get a single file

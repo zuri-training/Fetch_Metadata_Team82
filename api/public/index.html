@@ -6,21 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metadata Extractor</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <h1>Metadata Extractor</h1>
     <div>
         <!-- using multer to upload file -->
-        <form action="/file/testuserid/upload-file" enctype="multipart/form-data" method="post">
+        <form action="/files/62ed84213777aca6a51c2352" enctype="multipart/form-data" method="post" id="formD">
             <div class="form-group">
                 <input type="file" name="uploaded_file">
-                <input type="submit" value="Get me the stats!">
+                <input type="submit" value="Generate Metadata">
             </div>
-            <a href="./files.html">See files</a>
-
         </form>
     </div>
+
+
+
+    <script>
+
+        $("#formD").submit(async function (e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                console.log(formData)
+                $.ajax({
+                    type: "POST",
+                    headers: { 'token': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZWQ4NDIxMzc3N2FjYTZhNTFjMjM1MiIsImlhdCI6MTY1OTczMzM3OSwiZXhwIjoxNjYwMzM4MTc5fQ.6H3IXcS2nuemWBj1fwV49xsLIPLFldrJ8arB_2LFoFQ' },
+                    url: "/files/62ed84213777aca6a51c2352",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (r) {
+                        console.log("result", r)
+                    },
+                    error: function (e) {
+                        console.log("some error", e);
+                    }
+                });
+
+            });
+    </script>
 </body>
 
 </html>

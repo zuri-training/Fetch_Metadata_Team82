@@ -73,8 +73,16 @@ router.put('/updatepassword/:userId', verifyTokenAndAuthorization, async (req, r
         res.status(400).json("Please fill the required inputs!")
     } else {
         try {
+            const oldPassword = req.body.oldPassword
+            const newPassword = req.body.newPassword;
+
+            const user = await User.findById(req.params.userId)
+            if(user.password !== md5(oldPassword)) {
+                return res.status(400).json({message: 'Password Incorrect!'})
+            }
+
             const updatedUser = await User.findByIdAndUpdate(req.params.userId, {
-                password: md5(req.body.password),
+                password: md5(newPassword),
             }, { new: true });
             let { password, ...UserData } = updatedUser._doc
             res.status(200).json({ message: "Password Changed Successfully!", UserData });

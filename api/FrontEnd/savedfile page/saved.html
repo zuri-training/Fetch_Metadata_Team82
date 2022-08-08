@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>save file</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/savedfile page/saved.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <header>
+        <div class="logo-header">
+            <div class="logo"></div>
+            <div class="logo"></div>
+        </div>
+        <div class="button">
+            <button id="saved">Upload</button>
+            <button id="manage">Manage Account</button>
+        </div>
+        <img src="/savedfile page/images/menu.svg" alt="menu">
+    </header> -->
+
+
+    <header>
+        <!-- left nav-bar -->
+        <nav class="nav-bar">
+            <div class="nav-logo">
+                <div class="logo-head">
+                    <div class="logo"><a href="#"></a></div>
+                    <div class="logo"><a href="#"></a></div>
+                </div>
+            </div>
+            <!-- right nav-bar -->
+            <div class="nav-menu">
+                <ul>
+                    <li id="saved-files" class="nav-item"><a href="/metadata page/metadata.html">Upload File</a></li>
+                    <li id="manage-account" class="nav-item">
+                        <a class="manage" href="#">Manage account <i id="m-icon" class="fa-solid fa-angle-down"></i></a>
+                        <div class="dropdown_menu" id="drop">
+                            <ul>
+                                <li>
+                                    <a href="#">Adedolapo Bodede <i class="fa-solid fa-circle-user"></i></a>
+                                    <p>adedolapobodede@gmail.com</p>
+                                </li>
+                                <li>
+                                    <a href="/Change Password Page/changePassword.html" id="change-password">Change
+                                        password<i class="fa-solid fa-unlock-keyhole"></i></a>
+                                </li>
+                                <li><a href="#" id="logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- mobile view hamburger -->
+            <div class="hamburger">
+                <img src="/metadata page/icons/hamburger/Vector.svg" class="hamburger-image" alt="menu" />
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <table>
+                <caption>
+                    <h3>Saved Files</h3>
+                </caption>
+                <thead>
+                    <th>Name</th>
+                    <!-- <th>Size</th> -->
+                    <th>Type</th>
+                    <th>Date/Time</th>
+                    <th>Download Link</th>
+                </thead>
+                <tbody id="table"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        $.ajax({
+            type: 'GET',
+            headers: {
+                token: `Bearer ${localStorage.getItem('accessToken')}`,
+                // token: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZjEyMmE1Y2QzNzVhNDJjYjY0YTBiNiIsImlhdCI6MTY1OTk3MDI5MCwiZXhwIjoxNjYwNTc1MDkwfQ.UL7d6dtiFISho3nufGEChMhEjieL59uQbTkCZIVMQX4`,
+            },
+            url: `http://localhost:3000/files/${localStorage.getItem('userId')}`,
+            // url: `http://localhost:3000/files/62f122a5cd375a42cb64a0b6`,
+            data: {},
+            processData: false,
+            contentType: false,
+            success: function (r) {
+                // console.log('result', r);
+                r.forEach(file => {
+                    // console.log();
+                    var metadataofFile = JSON.parse(file.metadata)
+                    // console.log(metadataofFile["extension"]);
+                    // console.log(file.updatedAt);
+                    var fileUrl = file.fileURL
+                    var fileName = file.fileName
+                    // console.log(fileUrl);
+
+
+
+                    $("#table").append(`
+                    <tr>
+                    <td>${file.fileName}</td>
+                    <td>${metadataofFile["extension"]}</td>
+                    <td>${file.updatedAt}</td>
+                    <td><button id="download-btn" class="download-btn" fileName="${fileName}" fileUrl="${fileUrl}" onclick="downloadFile(this)">Download</button></td>
+                </tr>
+                    `)
+                });
+            },
+            error: function (e) {
+                $('#loading').addClass('hide');
+                alert("Something went wrong!")
+                localStorage.removeItem('fileUrl');
+                localStorage.removeItem('fileName');
+                $("#name-of-file").remove();
+                $(".metadata-key-value").remove();
+                window.location.href = "/SignIn Page/login.html";
+
+
+                console.log('some error', e);
+            },
+        });
+
+        function downloadFile(element) {
+            var fileURL = element.getAttribute('fileUrl')
+            var fileName = element.getAttribute('fileName')
+
+            fetch(fileURL)
+                .then(resp => resp.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    // the filename you want
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    alert('your file has been downloaded!'); // or you know, something with better UX...
+                })
+                .catch(() => alert('Somethin went wrong!'));
+        }
+
+
+        // Logout Button
+
+            $('#logout').on('click', () => {
+                localStorage.clear();
+                window.location.href = "/SignIn Page/login.html";
+
+            })
+
+    </script>
+</body>
+
+</html>

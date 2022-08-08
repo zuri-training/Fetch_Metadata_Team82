@@ -3,6 +3,7 @@ let fileInput = document.getElementById('file_input');
 let chosenFile = document.getElementById('chosen-file');
 let fileName = document.getElementById('file-name');
 
+
 fileInput.onchange = () => {
 	//for displaying the image
 	let reader = new FileReader();
@@ -129,6 +130,8 @@ $('#formD').submit(async function (e) {
 			localStorage.removeItem('fileName');
 			$("#name-of-file").remove();
 			$(".metadata-key-value").remove();
+			window.location.href = "/SignIn Page/login.html";
+
 
 			console.log('some error', e);
 		},
@@ -157,3 +160,12 @@ $('#download-btn').on('click', () => {
 		})
 		.catch(() => alert('Somethin went wrong!'));
 });
+
+
+// Logout Button
+
+$('#logout').on('click', () => {
+	localStorage.clear();
+	window.location.href = "/SignIn Page/login.html";
+
+})

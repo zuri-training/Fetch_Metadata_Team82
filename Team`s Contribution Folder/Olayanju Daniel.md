@@ -4,7 +4,7 @@ SLACK USERNAME: **SKUDO**
 
 LANDING PAGE DEVELOPMENT: https://github.com/zuri-training/Fetch_Metadata_Team82/issues/1
 
-CONNECTING FRONTEND WITH API: https://github.com/zuri-training/Fetch_Metadata_Team82/issues/17
+CONNECTED FRONTEND WITH API: https://github.com/zuri-training/Fetch_Metadata_Team82/issues/17
 
 MANAGED AND PROVIDED LINK FOR TEAM MEETINGS
 

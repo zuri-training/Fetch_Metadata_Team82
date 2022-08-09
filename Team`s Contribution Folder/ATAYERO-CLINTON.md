@@ -1,4 +1,6 @@
-ATAYERO  CLINTON  (TEAM LEAD)
+SLACK USERNAME: **ATAYERO  CLINTON  (TEAM LEAD)**
+
+**TASKS**
 
 Created SIGN UP PAGE and LOG IN PAGE. The link to the issue is stated below:
 https://github.com/zuri-training/Fetch_Metadata_Team82/issues/6

@@ -6,4 +6,4 @@ CONNECTED FRONTEND PAGES WITH API: https://github.com/zuri-training/Fetch_Metada
 
 USER SAVED PAGE: https://github.com/zuri-training/Fetch_Metadata_Team82/issues/19
 
-CREATE SAVED PAGE: https://github.com/zuri-training/Fetch_Metadata_Team82/issues/7
+CREATED SAVED PAGE: https://github.com/zuri-training/Fetch_Metadata_Team82/issues/7

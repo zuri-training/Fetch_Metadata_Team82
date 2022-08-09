@@ -1,3 +1,5 @@
+// HAMBURGER SECTION
+
 const menu = document.querySelector(".menu");
 const menuItems = document.querySelectorAll(".menuItem");
 const hamburger = document.querySelector(".hamburger-img");
@@ -24,30 +26,13 @@ menuItems.forEach(
   }
 )
 
-const openMenu = document.getElementById("answers")
-const openBtn = document.getElementById("open-btn")
-// // const openFaq = document.querySelector(".open")
-// // const closeMenu = document.getElementById("close")
-// // const closeFaq = document.querySelector(".close")
+// FAQ SECTION
 
-function openButton() {
-  openMenu.classList.add("open-answer")
-  // ) {
-  //   openBtn.classList.remove("close-btn")
-  //   openMenu.classList.add("open-button")
-  // }
+const contents = document.getElementsByClassName('content');
+for (i = 0; i<contents.length; i++){
+ let faqContent = contents[i];
+ function openContent(){
+this.classList.toggle('active');
 }
-
-// function closeButton() {
-//   openMenu.classList.remove("open-answer")
-// }
-
-// openBtn.addEventListener("click", toggleFaq)
-
-// const btns = document.querySelectorAll(".btn")
-
-// btns.forEach(btn => {
-//   btn.addEventListener('click', () =>{
-
-//   })
-// })
+faqContent.addEventListener('click', openContent)
+}

@@ -8,18 +8,11 @@ body {
 }
 
 .hamburger-img {
-  /* position: absolute; */
   z-index: 100;
-  top:
-    /*1rem*/
-    0;
-  right:
-    /*1rem*/
-    0;
+  top: 0;
+  right: 0;
   padding: 4px;
-  border:
-    /*black solid 1px*/
-    none;
+  border: none;
   background-color: #0000FF;
   cursor: pointer;
 }
@@ -68,16 +61,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 10px 80px;
-  /* gap: 444px; */
-
-  /* position: absolute; */
-  /* width: 1728px;
-  height: 128px; */
-  /* left: 0px;
-  top: 0px; */
-
-  /* Primary/90 */
-
   background: #0000FF;
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
 }
@@ -86,14 +69,9 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  /* padding: 4px; */
   gap: 10px;
-
-  /* position: absolute; */
   width: 20px;
   height: 20px;
-  /* left: 88px;
-  top: 50px; */
   margin-top: 8px;
   background: #0000FF;
   border-radius: 200px;
@@ -102,15 +80,8 @@ nav {
 .logo-header {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  /* padding: 10px; */
-  padding: 5px 10px 12px;
-  gap: 10px;
-
-  /* width: 65px 78px; */
-  /* height: 40px 49px; */
-
-  background: #FFFFFF;
+  align-items: flex-start;padding: 5px 10px 12px;
+  gap: 10px;background: #FFFFFF;
   border-radius: 200px;
 
 }
@@ -120,7 +91,6 @@ nav p {
   font-weight: 700;
   font-size: 1rem;
   line-height: 120%;
-  /* identical to box height, or 29px */
   color: #FFFFFF;
   padding-right: 40px;
 }
@@ -132,10 +102,7 @@ nav a {
   font-weight: 600;
   font-size: 1rem;
   line-height: 29px;
-  /* identical to box height */
   text-decoration: none;
-
-  /* 1stcolor/100 */
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
   padding: 5px 50px;
@@ -161,13 +128,8 @@ nav a {
   font-weight: 800;
   font-size: 3rem;
   line-height: 115%;
-  /* or 74px */
-
   display: flex;
   align-items: center;
-
-  /* Primary/100 */
-
   color: #000055;
 
 }
@@ -177,11 +139,8 @@ nav a {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 120%;
-  /* or 48px */
-
   display: flex;
   align-items: center;
-
   color: #484848;
 }
 
@@ -233,7 +192,6 @@ nav a {
   justify-content: center;
   align-items: center;
   padding: 25px 32px;
-  /* gap: 10px; */
   border: none;
   width: 250px;
   height: 30px;
@@ -241,9 +199,7 @@ nav a {
   font-weight: 700;
   font-size: 20px;
   line-height: 120%;
-  text-decoration: none;
-  /* Primary/70 */
-  color: #F7F7F7;
+  text-decoration: none;color: #F7F7F7;
   background: #0000D5;
   border-radius: 8px;
   margin-top: 30px;
@@ -255,12 +211,7 @@ nav a {
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 120%;
-  /* or 67px */
-
   text-align: center;
-
-  /* 1stcolor/1200 */
-
   color: #2B2B2B;
   margin-bottom: 0;
 }
@@ -270,12 +221,7 @@ nav a {
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 120%;
-  /* or 38px */
-
   text-align: center;
-
-  /* 1stcolor/1100 */
-
   color: #484848;
 }
 
@@ -290,8 +236,6 @@ nav a {
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  /* gap: 29px; */
-
   width: 450px;
   height: 250px;
   border-radius: 16px;
@@ -302,24 +246,15 @@ nav a {
   font-weight: 700;
   font-size: 1.75rem;
   line-height: 120%;
-  /* identical to box height, or 48px */
-
   text-align: center;
 }
 
 .metadata-text p {
-  /* width: 611px;
-  height: 283px; */
   font-style: normal;
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 130%;
-  /* or 42px */
-
   text-align: center;
-
-  /* 1stcolor/1000 */
-
   color: #6D6D6D;
 }
 
@@ -328,11 +263,8 @@ nav a {
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  /* gap: 29px; */
-
   width: 450px;
   height: 250px;
-
   background: #5555FF;
   border-radius: 16px;
 
@@ -343,10 +275,7 @@ nav a {
   font-weight: 700;
   font-size: 1.75rem;
   line-height: 120%;
-  /* identical to box height, or 48px */
-
   text-align: center;
-
   color: #FCFCFC;
 }
 
@@ -355,10 +284,7 @@ nav a {
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 130%;
-  /* or 42px */
-
   text-align: center;
-
   color: #FAFAFA;
 }
 
@@ -372,15 +298,8 @@ nav a {
   font-style: normal;
   font-weight: 700;
   font-size: 2.5rem;
-  line-height: 120%;
-  /* identical to box height, or 58px */
-
-  text-align: center;
-
-  /* 1stcolor/100 */
-
+  line-height: 120%;text-align: center;
   color: #FFFFFF;
-
 }
 
 .follow-text {
@@ -393,29 +312,18 @@ nav a {
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 120%;
-  /* or 38px */
-
   display: flex;
   align-items: center;
   text-align: center;
-
   color: #FFFFFF;
 }
 
 .follow-text p {
   font-style: normal;
-  /* font-weight: 600; */
   font-size: 1.25rem;
-  line-height: 130%;
-  /* or 36px */
-
-  display: flex;
+  line-height: 130%;display: flex;
   align-items: center;
-  text-align: center;
-
-  /* 1stcolor/100 */
-
-  color: #FFFFFF;
+  text-align: center;color: #FFFFFF;
   margin-top: 0;
 }
 
@@ -433,10 +341,8 @@ nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-evenly; */
   padding: 0px;
   width: 270px;
-  /* gap: 80px; */
 }
 
 .burger-svg {
@@ -469,11 +375,6 @@ nav a {
   font-weight: 700;
   font-size: 3.5rem;
   line-height: 120%;
-  /* or 96px */
-
-
-  /* 1stcolor/1200 */
-
   color: #2B2B2B;
   text-align: left;
 }
@@ -486,18 +387,12 @@ nav a {
   font-weight: 700;
   font-size: 2rem;
   line-height: 120%;
-  /* or 96px */
-
-
-  /* 1stcolor/1200 */
-
   color: #2B2B2B;
 }
 
 .reason {
   display: flex;
   width: 1014px;
-  /* height: 876px; */
   align-items: center;
   justify-content: space-evenly;
   padding-top: 70px;
@@ -508,14 +403,7 @@ nav a {
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 120%;
-  /* or 38px */
-
-  /* display: flex;
-  align-items: center; */
   text-align: center;
-
-  /* 1stcolor/1200 */
-
   color: #2B2B2B;
 }
 
@@ -524,12 +412,7 @@ nav a {
   font-weight: 400;
   font-size: 1.25rem;
   line-height: 120%;
-  /* or 29px */
-
   text-align: center;
-
-  /* 1stcolor/1000 */
-
   color: #6D6D6D;
 }
 
@@ -543,13 +426,6 @@ nav a {
   top: 2075px;
   left: 610px;
 }
-
-/* 1024px
-.mark {
-  position: absolute;
-  top: 1900px;
-  left: 405px;
-} */
 
 .efficient,
 .secure {
@@ -583,13 +459,6 @@ nav a {
   left: 1055px;
 }
 
-/* 1024px
-.half-dash {
-  position: absolute;
-  top: 2480px;
-  left: 790px;
-} */
-
 .circle {
   filter: brightness(0) invert(0);
   position: absolute;
@@ -615,8 +484,6 @@ nav a {
   font-weight: 700;
   font-size: 2rem;
   line-height: 120%;
-  /* identical to box height, or 58px */
-
   text-align: center;
   color: #2B2B2B;
   padding-bottom: 50px;
@@ -641,7 +508,6 @@ nav a {
   align-items: center;
   padding: 48px 30px 0px;
   width: 300px;
-  /* height: 548px; */
   transition: transform 0.25s;
 }
 
@@ -656,40 +522,18 @@ nav a {
 }
 
 .first-user {
-
-  /* gap: 32px; */
-
-  /* Secondary/10 */
   color: #2B2B2B;
   background: #FFEDCC;
 }
 
 .second-user {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 48px 30px 0px; */
-  /* gap: 32px; */
-
-  /* Primary/40 */
-
   background: #5555FF;
   color: #FFFFFF;
 }
 
 .third-user {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 48px 30px 0px; */
-  /* gap: 32px; */
-
-  /* 1stcolor/100 */
-
   background: #FFFFFF;
   color: #2B2B2B;
-  /* Primary/40 */
-
   border: 1px solid #5555FF;
 }
 
@@ -697,8 +541,6 @@ nav a {
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 130%;
-  /* or 78px */
-
   text-align: center;
   width: 250px;
 }
@@ -706,7 +548,6 @@ nav a {
 .name {
   width: 140px;
   height: 29px;
-
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
@@ -723,24 +564,20 @@ nav a {
   font-weight: 700;
   font-size: 2rem;
   line-height: 120%;
-  /* identical to box height, or 58px */
-
   display: flex;
   align-items: center;
   justify-content: center;
   padding-bottom: 50px;
-  /* 1stcolor/1200 */
-
   color: #2B2B2B;
 }
 
-.btn {
+.question {
   font-family: 'Lato', sans-serif;
   width: 700px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  padding: 0 15px;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 120%;
@@ -748,14 +585,11 @@ nav a {
   border-radius: 5px;
   border: none;
   margin-top: 10px;
-  /* or 38px */
-
-
   color: #FFFFFF;
   transition: all 0.3s ease-in-out;
 }
 
-.btn:focus {
+.faq .content.active .question {
   background-color: #FFB42B;
 }
 
@@ -764,18 +598,17 @@ nav a {
   transition: all 0.3s ease-in-out;
 }
 
-.button {
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.answers {
+.answer {
   font-style: normal;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 120%;
-  /* or 29px */
   width: 680px;
   background-color: #F0F0FF;
   margin-top: 0;
@@ -785,6 +618,33 @@ nav a {
   color: #2B2B2B;
   display: none;
 }
+
+/*BUNMI's ADDED CODE FOR FAQ  */
+.questions {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.question P {
+  position: relative;
+}
+
+.question P::after {
+  content: url(images/open.svg);
+  position: absolute;
+  right: 0;
+  padding-right: 15px;
+}
+
+.faq .content.active .answer {
+  display: block;
+}
+
+.faq .content.active .question P::after {
+  content: url(images/close.svg);
+}
+
+/*BUNMI's ADDED CODE FOR FAQ  */
 
 .open-answer {
   display: block;
@@ -904,15 +764,6 @@ footer {
     height: 300px;
   }
 
-  /* .metadata-text {
-    margin: 20px 0 10px 80px;
-  }
-
-
-  .metadata-text2 {
-    margin: 20px 80px 10px 0;
-  } */
-
   .metadata-text h2,
   .metadata-text2 h2 {
     font-size: 2rem;
@@ -1012,6 +863,8 @@ footer {
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
     align-items: center;
     padding: 10px 60px;
+    position: fixed;
+    width: 90%;
   }
 
   .logo-header {
@@ -1021,7 +874,7 @@ footer {
 
   .landing-text {
     flex-direction: column;
-    padding: 0 40px;
+    padding: 80px 40px 0;
   }
 
   .text h1 {
@@ -1053,9 +906,7 @@ footer {
   .image {
     margin-top: 50px;
     width: 714px;
-    height: 700px
-      /*936px*/
-    ;
+    height: 700px;
   }
 
   .explain-h1 {
@@ -1123,18 +974,6 @@ footer {
     padding-bottom: 50px;
   }
 
-  .burger-svg {
-    left: 44%;
-    top: 415.5%;
-  }
-
-  .dot {
-    left: 57%;
-    top: 426%;
-    width: 20px;
-    height: 20px;
-  }
-
   .why {
     flex-direction: column;
     margin: 25px 0 40px;
@@ -1152,11 +991,6 @@ footer {
     font-weight: 700;
     font-size: 1.75rem;
     line-height: 120%;
-    /* or 96px */
-
-
-    /* 1stcolor/1200 */
-
     color: #2B2B2B;
     text-align: left;
   }
@@ -1181,21 +1015,6 @@ footer {
     width: 310px;
     height: 250px;
     margin: auto auto 40px
-  }
-
-  .mark {
-    top: 562%;
-    left: 46%;
-  }
-
-  .half-dash {
-    top: 679%;
-    left: 42%;
-  }
-
-  .circle {
-    top: 678.5%;
-    left: 49%;
   }
 
   .users {
@@ -1248,25 +1067,61 @@ footer {
   .close-btn {
     width: 10px;
   }
+
+  .question {
+    width: 500px;
+  }
+
+  .answer {
+    width: 480px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-  .image {
-    margin-top: 50px;
-    width: 414px;
-    height: 500px
-      /*936px*/
-    ;
-    padding-left: 0;
+  .landing-text {
+    padding-top: 80px;
   }
 
   .hamburger-menu {
-    padding: 10px 40px;
+    padding: 10px 25px;
+    position: fixed;
+    width: 90%;
+  }
+
+  .image {
+    margin-top: 50px;
+    width: 414px;
+    height: 500px;
+    padding-left: 0;
+  }
+
+  .question {
+    width: 350px;
+    padding: 0;
+  }
+
+  .answer {
+    width: 330px;
+  }
+
+  .questions {
+    font-size: 1rem;
+    padding: 0 0 0 15px;
   }
 }
 
 /* 375px logo fix */
 @media only screen and (max-width:375px) {
+  .landing-text {
+    padding-top: 80px;
+  }
+
+  .hamburger-menu {
+    padding: 10px 25px;
+    position: fixed;
+    width: 85%;
+  }
+
   .image {
     margin-top: 50px;
     width: 350px;
@@ -1274,27 +1129,17 @@ footer {
     padding-left: 0;
   }
 
-  .burger-svg {
-    left: 43%;
-    top: 427.5%;
+  .question {
+    width: 350px;
+    padding: 0;
   }
 
-  .dot {
-    left: 57.5%;
-    top: 438%;
+  .answer {
+    width: 330px;
   }
 
-  .mark {
-    top: 574%;
-  }
-
-  .half-dash {
-    top: 691%;
-    left: 41%;
-  }
-
-  .circle {
-    top: 690.5%;
-    left: 49%;
+  .questions {
+    font-size: 1rem;
+    padding: 0 0 0 15px;
   }
 }

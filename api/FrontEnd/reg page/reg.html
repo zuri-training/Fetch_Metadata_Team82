@@ -57,14 +57,16 @@
             </div>
             <div class="password">
                 <label for="psw">Password</label> <br>
-                <input type="password" id="psw" placeholder="Enter password here" required />
+                <input type="password" id="psw" placeholder="Enter password here" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
                 <i class="far fa-eye" id="togglePassword"></i>
                 <p>Password should contain an uppercase letter, number and symbol.</p>
 
             </div>
             <div class="input-control">
                 <label for="c-psw">Confirm Password</label> <br>
-                <input type="password" id="c-psw" placeholder="Enter password here" required />
+                <input type="password" id="c-psw" placeholder="Enter password here" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
                 <i class="far fa-eye" id="togglePassword2"></i>
                 <p><span class="alert" id="password-alert"></span> </p>
             </div>
@@ -79,7 +81,6 @@
                 <p>Already have an account? <a href="/SignIn Page/login.html">Sign in</a></p>
             </div>
         </form>
-
     </div>
     <script>
 
@@ -117,14 +118,15 @@
             const repassword = $("#c-psw").val();
 
             if (password !== repassword) {
-                alert("Passwords Do Not Match!");
+                // alert("Passwords Do Not Match!");
+                $("#password-alert").append("Passwords Do Not Match!")
                 $("#fName").val("")
                 $("#email").val("")
                 $("#psw").val("")
                 $("#c-psw").val("")
             } else {
                 $.ajax({
-                    url: "http://localhost:3000/auth/register",
+                    url: "/auth/register",
                     dataType: "json",
                     type: "post",
                     contentType: "application/json",

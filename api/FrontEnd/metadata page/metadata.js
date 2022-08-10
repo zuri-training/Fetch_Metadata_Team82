@@ -106,7 +106,7 @@ $('#formD').submit(async function (e) {
 		headers: {
 			token: `Bearer ${localStorage.getItem('accessToken')}`,
 		},
-		url: `http://localhost:3000/files/${localStorage.getItem('userId')}`,
+		url: `/files/${localStorage.getItem('userId')}`,
 		data: formData,
 		processData: false,
 		contentType: false,
@@ -169,3 +169,8 @@ $('#logout').on('click', () => {
 	window.location.href = "/SignIn Page/login.html";
 
 })
+
+// Displaying user email
+
+$("#user-email-field").append(`<a href="#">${localStorage.getItem('username')} <i class="fa-solid fa-circle-user"></i></a>
+										<p>${localStorage.getItem('email')}</p>`)

@@ -80,6 +80,8 @@ nav {
 
   background: #0000FF;
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  width: 90%;
 }
 
 .logo {
@@ -153,7 +155,7 @@ nav a {
   background-color: #F2F2F2;
   padding: 0 80px;
   align-items: center;
-  padding-top: 70px;
+  padding-top: 150px;
 }
 
 .text h1 {
@@ -642,17 +644,7 @@ nav a {
   padding: 48px 30px 0px;
   width: 300px;
   /* height: 548px; */
-  transition: transform 0.25s;
-}
 
-.first-user:hover {
-  transform: scale(1.1);
-}
-.second-user {
-  transform: scale(1.1);
-}
-.third-user:hover {
-  transform: scale(1.1);
 }
 
 .first-user {
@@ -734,13 +726,13 @@ nav a {
   color: #2B2B2B;
 }
 
-.btn {
+.question {
   font-family: 'Lato', sans-serif;
   width: 700px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  padding: 0 15px;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 120%;
@@ -755,7 +747,7 @@ nav a {
   transition: all 0.3s ease-in-out;
 }
 
-.btn:focus {
+.faq .content.active .question {
   background-color: #FFB42B;
 }
 
@@ -764,13 +756,13 @@ nav a {
   transition: all 0.3s ease-in-out;
 }
 
-.button {
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.answers {
+.answer {
   font-style: normal;
   font-weight: 400;
   font-size: 1.5rem;
@@ -785,6 +777,33 @@ nav a {
   color: #2B2B2B;
   display: none;
 }
+
+/*BUNMI's ADDED CODE FOR FAQ  */
+.questions {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.question P {
+  position: relative;
+}
+
+.question P::after {
+  content: url(images/open.svg);
+  position: absolute;
+  right: 0;
+  padding-right: 15px;
+}
+
+.faq .content.active .answer {
+  display: block;
+}
+
+.faq .content.active .question P::after {
+  content: url(images/close.svg);
+}
+
+/*BUNMI's ADDED CODE FOR FAQ  */
 
 .open-answer {
   display: block;
@@ -1012,6 +1031,9 @@ footer {
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
     align-items: center;
     padding: 10px 60px;
+
+    position: fixed;
+    width: 90%;
   }
 
   .logo-header {
@@ -1021,7 +1043,7 @@ footer {
 
   .landing-text {
     flex-direction: column;
-    padding: 0 40px;
+    padding: 80px 40px 0;
   }
 
   .text h1 {
@@ -1123,18 +1145,6 @@ footer {
     padding-bottom: 50px;
   }
 
-  .burger-svg {
-    left: 44%;
-    top: 415.5%;
-  }
-
-  .dot {
-    left: 57%;
-    top: 426%;
-    width: 20px;
-    height: 20px;
-  }
-
   .why {
     flex-direction: column;
     margin: 25px 0 40px;
@@ -1152,11 +1162,6 @@ footer {
     font-weight: 700;
     font-size: 1.75rem;
     line-height: 120%;
-    /* or 96px */
-
-
-    /* 1stcolor/1200 */
-
     color: #2B2B2B;
     text-align: left;
   }
@@ -1181,21 +1186,6 @@ footer {
     width: 310px;
     height: 250px;
     margin: auto auto 40px
-  }
-
-  .mark {
-    top: 562%;
-    left: 46%;
-  }
-
-  .half-dash {
-    top: 679%;
-    left: 42%;
-  }
-
-  .circle {
-    top: 678.5%;
-    left: 49%;
   }
 
   .users {
@@ -1248,25 +1238,61 @@ footer {
   .close-btn {
     width: 10px;
   }
+
+  .question {
+    width: 500px;
+  }
+
+  .answer {
+    width: 480px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-  .image {
-    margin-top: 50px;
-    width: 414px;
-    height: 500px
-      /*936px*/
-    ;
-    padding-left: 0;
+  .landing-text {
+    padding-top: 80px;
   }
 
   .hamburger-menu {
-    padding: 10px 40px;
+    padding: 10px 25px;
+    position: fixed;
+    width: 90%;
+  }
+
+  .image {
+    margin-top: 50px;
+    width: 414px;
+    height: 500px;
+    padding-left: 0;
+  }
+
+  .question {
+    width: 350px;
+    padding: 0;
+  }
+
+  .answer {
+    width: 330px;
+  }
+
+  .questions {
+    font-size: 1rem;
+    padding: 0 0 0 15px;
   }
 }
 
 /* 375px logo fix */
 @media only screen and (max-width:375px) {
+  .landing-text {
+    padding-top: 80px;
+  }
+
+  .hamburger-menu {
+    padding: 10px 25px;
+    position: fixed;
+    width: 85%;
+  }
+
   .image {
     margin-top: 50px;
     width: 350px;
@@ -1274,27 +1300,17 @@ footer {
     padding-left: 0;
   }
 
-  .burger-svg {
-    left: 43%;
-    top: 427.5%;
+  .question {
+    width: 350px;
+    padding: 0;
   }
 
-  .dot {
-    left: 57.5%;
-    top: 438%;
+  .answer {
+    width: 330px;
   }
 
-  .mark {
-    top: 574%;
-  }
-
-  .half-dash {
-    top: 691%;
-    left: 41%;
-  }
-
-  .circle {
-    top: 690.5%;
-    left: 49%;
+  .questions {
+    font-size: 1rem;
+    padding: 0 0 0 15px;
   }
 }

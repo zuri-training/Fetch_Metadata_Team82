@@ -104,15 +104,13 @@
             var password = $("#psw").val()
 
             $.ajax({
-                url: "http://localhost:3000/auth/login",
+                url: "/auth/login",
                 dataType: "json",
                 type: "post",
                 contentType: "application/json",
                 data: JSON.stringify({ "email": email, "password": password }),
                 processData: false,
                 success: function (data, textStatus, jQxhr) {
-                    // console.log(data);
-                    // console.log(data.accessToken);
                     data.accessToken && localStorage.setItem('accessToken', data.accessToken)
                     data.accessToken && localStorage.setItem('userId', data.userDetails._id)
                     data.accessToken && localStorage.setItem('username', data.userDetails.username)

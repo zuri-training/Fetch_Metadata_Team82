@@ -135,18 +135,18 @@ h5 {
     color:#0000D4;
 }
 /* The msg displays when user clicks on psw feild */
-#message {
-    display: none;
-    background-color: #f1f1f1;
-    color: #C62828;
-    position: relative;
+   position: relative;
     padding: 20px;
     margin-top: 10px;
 }
 #message p {
     padding: 10px 35px;
     font-size: 12px;
-}
+}#message {
+    display: none;
+    background-color: #f1f1f1;
+    color: #C62828;
+ 
 /* Add a green text color and a checkmark when the requirements are right */
 .valid {
     color: green;

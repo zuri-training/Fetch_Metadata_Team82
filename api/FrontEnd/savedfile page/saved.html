@@ -47,9 +47,7 @@
                         <a class="manage" href="#">Manage account <i id="m-icon" class="fa-solid fa-angle-down"></i></a>
                         <div class="dropdown_menu" id="drop">
                             <ul>
-                                <li>
-                                    <a href="#">Adedolapo Bodede <i class="fa-solid fa-circle-user"></i></a>
-                                    <p>adedolapobodede@gmail.com</p>
+                                <li id="user-email-field">
                                 </li>
                                 <li>
                                     <a href="/Change Password Page/changePassword.html" id="change-password">Change
@@ -88,14 +86,21 @@
     </main>
 
     <script>
+
+        // Displaying user email
+
+        $("#user-email-field").append(`<a href="#">${localStorage.getItem('username')} <i class="fa-solid fa-circle-user"></i></a>
+										<p>${localStorage.getItem('email')}</p>`)
+
+
+
+
         $.ajax({
             type: 'GET',
             headers: {
                 token: `Bearer ${localStorage.getItem('accessToken')}`,
-                // token: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZjEyMmE1Y2QzNzVhNDJjYjY0YTBiNiIsImlhdCI6MTY1OTk3MDI5MCwiZXhwIjoxNjYwNTc1MDkwfQ.UL7d6dtiFISho3nufGEChMhEjieL59uQbTkCZIVMQX4`,
             },
-            url: `http://localhost:3000/files/${localStorage.getItem('userId')}`,
-            // url: `http://localhost:3000/files/62f122a5cd375a42cb64a0b6`,
+            url: `/files/${localStorage.getItem('userId')}`,
             data: {},
             processData: false,
             contentType: false,
@@ -160,11 +165,11 @@
 
         // Logout Button
 
-            $('#logout').on('click', () => {
-                localStorage.clear();
-                window.location.href = "/SignIn Page/login.html";
+        $('#logout').on('click', () => {
+            localStorage.clear();
+            window.location.href = "/SignIn Page/login.html";
 
-            })
+        })
 
     </script>
 </body>

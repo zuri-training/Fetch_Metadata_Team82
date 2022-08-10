@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	/* font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #2B2B2B;
+    line-height: 1.5;
+    list-style-position: inside; */
+	font-family: "Inter", sans-serif;
+	align-items: center;
+	justify-content: center;
+	background-color: #ffffff;
+	height: 100vh;
+	height: 100vh;
+	margin: auto;
+}
+
+.menu-bar {
+	width: 100vw;
+	height: 10vh;
+	background-color: #0000ff;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 35px;
+	padding: 12px 0 15px 43px;
+}
+.logo {
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	border: none;
+	background-color: #ffffff;
+	border-radius: 14px;
+	width: 1.9rem;
+	height: 1.1rem;
+	padding: 5px 3px 1px;
+}
+.first-circle {
+	border: 5px solid #0000ff;
+	background-color: #0000ff;
+	border-radius: 50%;
+	height: 0.5rem;
+	width: 0.6rem;
+}
+.second-circle {
+	border: 5px solid #0000ff;
+	background-color: #0000ff;
+	border-radius: 50%;
+	height: 0.5rem;
+	width: 0.6rem;
+}
+
+main {
+	padding: 1em;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.container {
+	margin-bottom: 1.5em;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.content {
+	width: 80%;
+}
+
+.head {
+	margin-bottom: 0.5em;
+}
+
+.head h5 {
+	font-size: 1.75rem;
+	font-weight: 500;
+	color: #0000ff;
+}
+
+span {
+	color: #0000ff;
+}
+
+ul {
+	margin-left: 1em;
+}
+
+.img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20%;
+}
+.drop {
+	display: flex;
+	margin-left: 7em;
+}
+
+.arrow {
+	width: 30px;
+	height: 30px;
+}
+
+.main-img {
+	position: relative;
+}
+
+.sub-img {
+	position: absolute;
+	margin: auto;
+}
+
+footer {
+	background-color: #000080;
+	color: #ffffff;
+	text-align: center;
+	padding: 50px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+	.container {
+		margin-bottom: 2em;
+	}
+
+	.flex {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.content,
+	.text,
+	.img {
+		width: 100%;
+	}
+
+	.head h5 {
+		text-align: center;
+	}
+}

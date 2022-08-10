@@ -3,6 +3,14 @@ This is a repository for Team 82 with Fetch Metadata as the Project name.
 LINK TO OUR GITHUB TEAM LINK HERE: 👉 https://github.com/orgs/zuri-training/teams/fetch_metadata-team-82
 
 
+
+
+
+
+
+
+
+
 Figma Link to the design for this page: 
 https://www.figma.com/file/M72dHcHNJItdlvUDyYeva7/METADATA-D?node-id=0%3A1
 

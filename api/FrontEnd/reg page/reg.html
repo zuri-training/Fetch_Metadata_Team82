@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
     <link rel="stylesheet" href="/reg page/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -32,9 +33,9 @@
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="drop-down-content">
-                        <a href="/landing page/landingPage.html#button">FAQ 1</a>
-                        <a href="/landing page/landingPage.html#button">FAQ 2</a>
-                        <a href="/landing page/landingPage.html#button">FAQ 3</a>
+                        <a href="/landing page/landing page.html#faq">FAQ 1</a>
+                        <a href="/landing page/landing page.html#faq">FAQ 2</a>
+                        <a href="/landing page/landing page.html#faq">FAQ 3</a>
                     </div>
                 </div>
             </div>
@@ -71,7 +72,7 @@
                 <p><span class="alert" id="password-alert"></span> </p>
             </div>
             <div class="terms">
-                <p><input type="checkbox" id="check"> I agree to <a href="">Terms of Use</a> and <a href="">Privacy
+                <p><input type="checkbox" required id="check"> I agree to <a href="/terms/terms.html">Terms of Use</a> and <a href="/terms/policy.html">Privacy
                         Policy</a></p>
             </div>
             <div>
@@ -104,6 +105,8 @@
             changeAttribute("#togglePassword2", "#c-psw")
 
         });
+
+        
 
 
 
@@ -152,29 +155,6 @@
     </script>
 
 
-
-    <!-- <script type="text/javascript">
-        function validate() {
-            var vPassword = document.getElementById("psw").value;
-            var vConfirmPassword = document.getElementById("c-psw").value;
-              if (vPassword != vConfirmPassword) {
-                document.getElementById("alert").textContent = "Passwords do not match.";
-              }
-              return true 
-          }
-
-    </script> -->
-    <!-- <script>
-        function onchange() {
-            const vPassword = document.querySelector('psw');
-            const confirm = document.querySelector('c-psw');
-            if (c-psw.value === psw.value) {
-                confirm.setCustomValidity('');
-            } else {
-                confirm.setCustomValidity('Passwords do not match');
-            }
-        }
-    </script> -->
 
 </body>
 

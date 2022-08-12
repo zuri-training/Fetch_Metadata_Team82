@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 *{
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 body {
@@ -9,42 +9,48 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #FFFFFF;
-    /* width: 100%; */
-    /* height: 100%; */
 }
 .menu-bar {
     width: 100vw;
-    height: 4vh;
-    background-color: #0000FF;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 35px;
-    padding: 12px 0 5px 43px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 70px;
+  background: #0000FF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 .logo {
-    position: absolute;
     display: flex;
-    flex-wrap: wrap;
-    border: none;
-    background-color: #FFFFFF;
-    border-radius: 14px;
-    width: 1.9rem;
-    height: 1.1rem;
-    padding: 5px 3px 1px;
+  flex-direction: row;
+  align-items: flex-start;
+  /* padding: 10px; */
+  padding: 5px 10px 12px;
+  gap: 10px;
+  background: #FFFFFF;
+  border-radius: 200px;
 }
 .first-circle {
-    border: 5px solid #0000FF;
-    background-color: #0000FF;
-    border-radius: 50%;
-    height: 0.15rem;
-    width: 0.1rem;
+    display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  background: #0000FF;
+  border-radius: 200px;
 }
 .second-circle {
-    border: 5px solid #0000FF;
-    background-color: #0000FF;
-    border-radius: 50%;
-    height: 0.15rem;
-    width: 0.1rem;
+    display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  background: #0000FF;
+  border-radius: 200px;
 }
 .home-doc {
     visibility: hidden;
@@ -63,7 +69,8 @@ h5 {
 .entire {
     width: 90%;
     /* border: 5px solid red; */
-    padding-left: 34px;
+    padding-left: 70px;
+    margin: 50px auto;
 }
 #container {
     position: relative;
@@ -87,7 +94,8 @@ h5 {
     color: #2B2B2B;
 }
 #fName {
-    width: 80vw;
+    font-family: 'Lato', sans-serif;
+    width: 75vw;
     margin: 5px 0 20px;
     color: #484848;
     padding-left: 10px;
@@ -98,7 +106,7 @@ h5 {
     border-color:#0000ff5f;
 }
 #email {
-    width: 80vw;
+    width: 75vw;
     margin: 5px 0 20px;
     color: #484848;
     font-size: 16px;
@@ -110,7 +118,7 @@ h5 {
 }
 
 #psw {
-    width:80vw;
+    width:75vw;
     color: #484848;
     padding-left: 10px;
     height:35px; 
@@ -142,7 +150,7 @@ h5 {
 }
 
 #c-psw {
-    width: 80vw;
+    width: 75vw;
     margin: 5px 0 5px;
     color: #484848;
     padding-left: 10px;
@@ -155,7 +163,7 @@ h5 {
 .terms {
     margin: 5px 0 20px;
     font-size: 16px;
-    width: 80vw;
+    width: 75vw;
 }
 .terms a {
     text-decoration: none;
@@ -168,7 +176,7 @@ h5 {
 #btn {
     background-color: #0000FF;
     color: #FFFFFF;
-    width: 81vw;
+    width: 78vw;
     border: none;
     border-radius: 5px;
     margin: 10px 0 15px;
@@ -181,7 +189,7 @@ h5 {
     color: #FFFFFF;
 }
 .link p {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     color: #000000;
 }
@@ -205,7 +213,8 @@ h5 {
 
 @media only screen and (min-width: 700px) {
     * {
-        margin: 0 auto;
+        /* margin: 0 auto; */
+        margin: 0;
         padding: 0;
     }
     body {
@@ -215,16 +224,23 @@ h5 {
         background-color: #F5F5F9;
     }
     .menu-bar {
-        margin-bottom: 60px;
+        /* margin-bottom: 60px;
         background-color: #0000FF;
         width: 100vw;
         overflow: hidden;
-        display: flex;
+        display: flex; */
         /* flex-wrap: wrap; */
-        height: calc(10.5vh - 30px);
+        /* height: calc(10.5vh - 30px);
         text-align: center;
         text-decoration: none;
-        padding: 20px 0 15px 43px;
+        padding: 20px 0 15px 43px; */
+        display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 80px;
+  background: #0000FF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     }
     .drop-down {
         float: right;
@@ -268,7 +284,7 @@ h5 {
         display: block;
     }
     .logo {
-        position: absolute;
+        /* position: absolute;
         display: flex;
         flex-wrap: wrap;
         border: none;
@@ -276,21 +292,61 @@ h5 {
         border-radius: 19px;
         width: calc(3rem - 16px);
         height: calc(2rem - 18px);
-        padding: 7px 8px 4px;
+        padding: 7px 8px 4px; */
+        display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* padding: 10px; */
+  padding: 5px 10px 12px;
+  gap: 10px;
+
+  /* width: 65px 78px; */
+  /* height: 40px 49px; */
+
+  background: #FFFFFF;
+  border-radius: 200px;
     }
     .first-circle {
-        border: 5px solid #0000FF;
+        /* border: 5px solid #0000FF;
         background-color: #0000FF;
         border-radius: 50%;
         height: 0.2rem;
-        width: 0.2rem;
+        width: 0.2rem; */
+        display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* padding: 4px; */
+  gap: 10px;
+
+  /* position: absolute; */
+  width: 20px;
+  height: 20px;
+  /* left: 88px;
+  top: 50px; */
+  margin-top: 8px;
+  background: #0000FF;
+  border-radius: 200px;
     }
     .second-circle {
-        border: 5px solid #0000FF;
+        /* border: 5px solid #0000FF;
         background-color: #0000FF;
         border-radius: 50%;
         height: 0.2rem;
-        width: 0.2rem;
+        width: 0.2rem; */
+        display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* padding: 4px; */
+  gap: 10px;
+
+  /* position: absolute; */
+  width: 20px;
+  height: 20px;
+  /* left: 88px;
+  top: 50px; */
+  margin-top: 8px;
+  background: #0000FF;
+  border-radius: 200px;
     }
     .home-doc {
         visibility:visible;
@@ -326,9 +382,9 @@ h5 {
         box-sizing: border-box;
         border-radius: 5px;
         background-color: #FFFFFF;
-        box-shadow: 10px;
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);;
         padding-left: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
     
     #container label {
@@ -338,8 +394,8 @@ h5 {
     }
     #fName {
         width: 300px;
-        height: 25px;
-        border-radius: 10px;
+        height: 35px;
+        border-radius: 5px;
         margin: 5px 0 10px;
         color: #6D6D6D;
         padding-left: 20px;
@@ -347,9 +403,10 @@ h5 {
         font-weight: 400;
     }
     #email {
+        font-family: 'Lato', sans-serif;
         width: 300px;
-        height: 25px;
-        border-radius: 10px;
+        height: 35px;
+        border-radius: 5px;
         margin: 5px 0 10px;
         color: #6D6D6D;
         padding-left: 20px;
@@ -357,9 +414,10 @@ h5 {
         font-weight: 400;
     }
     #psw {
+        font-family: 'Lato', sans-serif;
         width: 300px;
-        height: 25px;
-        border-radius: 10px;
+        height: 35px;
+        border-radius: 5px;
         color: #6D6D6D;
         padding-left: 20px;
         font-size: 12px;
@@ -375,13 +433,14 @@ h5 {
     }
     #c-psw {
         width: 300px;
-        height: 25px;
-        border-radius: 10px;
+        height: 35px;
+        border-radius: 5px;
         margin: 5px 0 10px;
         color: #6D6D6D;
         padding-left: 20px;
         font-size: 12px;
         font-weight: 400;
+        font-family: 'Lato', sans-serif;
     }
     #togglePassword, #togglePassword2 {
         margin-left: -30px;
@@ -400,23 +459,25 @@ h5 {
     #btn {
         background-color: #0000FF;
         color: #FFFFFF;
+        font-family: 'Lato', sans-serif;
         width: 320px;
-        height: 25px;
+        height: 35px;
         border: none;
         border-radius: 5px;
-        margin: 10px 0 5px;
+        margin: 10px 0;
         font-weight: 700;
-        font-size: 12px;
+        font-size: 16px;
     }
     #btn:hover {
         background-color: #0000AA;
         color: #FFFFFF;
     }
     .link p {
-        font-size: 20px;
+        font-size: 12px;
         font-weight: 400;
         color: #000000;
-        width: 345px;
+        width: 320px;
+        text-align: center;
     }
     .link a {
         text-decoration: none;

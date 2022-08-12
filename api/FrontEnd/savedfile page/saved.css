@@ -5,7 +5,7 @@
 }
 
 body {
-	font-family: "Lato", sans-serif;
+	font-family: 'Lato', sans-serif;
 	font-weight: 400;
 	font-size: 1.5rem;
 	background-color: #ffffff;
@@ -33,7 +33,7 @@ main {
 	margin: 2em auto;
 	background-color: #ffffff;
 	border-radius: 8px;
-	padding: 0 1em;
+	padding: 2.25em 1em 0;
 	box-shadow: 2px 2px #ffffff;
 }
 table {
@@ -50,7 +50,7 @@ thead {
 	color: #ffffff;
 	border-radius: 8px;
 	font-weight: 400;
-	font-size: 1.75rem;
+	font-size: 1.25rem;
 }
 tr {
 	padding: 10em 0;
@@ -107,18 +107,26 @@ body {
 
 /* left nav-bar styles */
 .nav-bar {
-	display: flex;
+	/* display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	height: 7vh;
 	width: 100%;
 	background-color: #0000ff;
-	position: fixed;
+	position: fixed;*/
 	top: 0;
 	right: 0;
 	left: 0;
-	box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
-	margin-bottom: 5rem;
+	/*box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+	margin-bottom: 5rem; */
+	display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 35px;
+  background: #0000FF;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
+  position: fixed;
 }
 
 .nav-logo {
@@ -128,7 +136,7 @@ body {
 }
 
 .logo-head {
-	display: flex;
+	/* display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
@@ -137,16 +145,42 @@ body {
 	background-color: #ffffff;
 	border-radius: 20rem;
 	height: 4vh;
-	cursor: pointer;
+	cursor: pointer; */
+	display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* padding: 10px; */
+  padding: 5px 10px 12px;
+  gap: 10px;
+
+  /* width: 65px 78px; */
+  /* height: 40px 49px; */
+
+  background: #FFFFFF;
+  border-radius: 200px;
 }
 
 .logo {
-	gap: 10px;
+	/* gap: 10px;
 	width: 18px;
 	height: 18px;
 	margin-top: 7px;
 	background-color: #0000ff;
-	border-radius: 200px;
+	border-radius: 200px; */
+	display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  /* padding: 4px; */
+  gap: 10px;
+
+  /* position: absolute; */
+  width: 20px;
+  height: 20px;
+  /* left: 88px;
+  top: 50px; */
+  margin-top: 8px;
+  background: #0000FF;
+  border-radius: 200px;
 }
 
 /* right nav-bar styles */
@@ -174,7 +208,7 @@ body {
 }
 
 #saved-files {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	border: 1px solid #0000d5;
 	padding: 1vh 3vh;
 	border-radius: 6px;
@@ -196,7 +230,7 @@ label:hover {
 	transition: 0.7s ease;
 	font-weight: 700;
 	border: 1px solid white;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	padding: 1vh 3vh;
 	border-radius: 6px;
 	position: relative;

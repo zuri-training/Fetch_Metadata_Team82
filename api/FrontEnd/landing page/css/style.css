@@ -79,7 +79,7 @@ nav {
   /* Primary/90 */
 
   background: #0000FF;
-  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   position: fixed;
   width: 90%;
 }

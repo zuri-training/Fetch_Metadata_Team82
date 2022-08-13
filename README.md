@@ -26,7 +26,7 @@ The api now functions for the following actions:
 	-getting all user reviews
 
 
-We avoided all developers to commit to avoid merge conflicts. The following is a list of who contributed what:
+We avoided all developers to commit to avoid merge conflicts. The following is a list of who contributed what to backend:
 
 @trapmoneyrai ON ROUTES FOR DOWNLOADING AND SHARING OF METADATA AND FILES TO OTHER SITES
 

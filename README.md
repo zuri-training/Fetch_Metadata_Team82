@@ -1,4 +1,4 @@
-After cloning the repository do the following.
+After cloning the repository, go to the api directory and do the following.
 	-Run npm install
 	-Run npm install pm2
 	-Run pm2 start index.js

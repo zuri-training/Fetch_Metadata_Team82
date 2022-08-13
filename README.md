@@ -1,3 +1,19 @@
+After cloning the repository do the following.
+	-Run npm install
+	-Run npm install pm2
+	-Run pm2 start index.js
+By default it will run on port 3000.
+If you want to change its port, you should edit the .env file and add: PORT = whatever port you want it to run on.
+
+
+
+
+
+
+
+
+
+
 The api now functions for the following actions:
 	-user login
 	-user registration

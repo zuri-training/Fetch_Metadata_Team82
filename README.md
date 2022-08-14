@@ -12,8 +12,8 @@ BY DEFAULT THE APP WILL RUN ON PORT 3000.
 TO CHANGE THE PORT:
 1. open the .env file: sudo nano .env
 2. add the PORT on a new line to the file: PORT = the free port you want to run the app on.
-
-
+3. save and exit
+4. restart pm2: pm2 restart all
 
 
 ENJOY

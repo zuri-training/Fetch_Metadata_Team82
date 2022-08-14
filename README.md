@@ -1,12 +1,22 @@
-After cloning the repository, go to the api directory and do the following.
-	-Run npm install
-	-Run npm install -g pm2
-	-Run pm2 start index.js
-By default it will run on localhost on port 3000.
-If you want to change its port, you should edit the .env file and add: PORT = whatever port you want it to run on.
+DEPLOYMENT INSTRUCTIONS:
+1. Create a folder: mkdir team82
+2. Change directory: cd team82
+3. Clone master branch: git clone -b master --single-branch https://github.com/zuri-training/Fetch_Metadata_Team82.git
+4. Change directory to the project folder: cd Fetch_Metadata_Team82
+5. Change directory to the api folder: cd api
+6. Install the dependencies: npm install
+7. Install pm2 globally: npm install pm2 -g
+8. Start the server: pm2 start index.js
+
+BY DEFAULT THE APP WILL RUN ON PORT 3000.
+TO CHANGE THE PORT:
+1. open the .env file: sudo nano .env
+2. add the PORT to the file: PORT = the free port you want to run the app on.
 
 
 
+
+ENJOY
 
 
 
